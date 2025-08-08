@@ -81,6 +81,24 @@ html,body {
     border: 1px solid rgba(0,0,0,0.03);
 }
 
+.discount-banner {
+    background: #e6fff3;
+    border: 1px dashed #00a48c;
+    padding: 8px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #006a54;
+}
+
+#discount-section {
+    display: none;
+    color: green;
+    font-weight: 700;
+}
+
 .section-title {
     display:flex;
     align-items:center;
@@ -100,26 +118,144 @@ label {
     color:var(--accent);
     font-weight:600;
     font-size:13px;
+    margin-bottom: 4px;
 }
 
-select,input[type="number"] {
-    width:100%;
-    padding:11px;
-    border-radius:8px;
-    border:1px solid #d6ebe3;
-    font-size:14px;
-    box-sizing:border-box;
-    margin-top:6px;
+/* Refined dropdown and input styling */
+select, input[type="number"] {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #d6ebe3;
+    font-size: 14px;
+    line-height: 1.4;
+    box-sizing: border-box;
+    margin-top: 4px;
+    margin-bottom: 6px;
+    background-color: #fff;
+    min-height: 42px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Custom dropdown arrow with better positioning */
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23007c6b' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.8' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 14px;
+    padding-right: 38px;
+    cursor: pointer;
+}
+
+/* Subtle focus and hover states */
+select:focus, input[type="number"]:focus {
+    outline: none;
+    border-color: var(--green-2);
+    box-shadow: 0 0 0 2px rgba(0, 164, 140, 0.1);
+}
+
+select:hover, input[type="number"]:hover {
+    border-color: var(--green-1);
+}
+
+/* Better option spacing where supported */
+select option {
+    padding: 8px 12px;
+    line-height: 1.5;
+    font-size: 14px;
+    background-color: white;
+    color: #14332f;
+}
+
+select option:hover {
+    background-color: #f8fffe;
+}
+
+select option:checked {
+    background-color: var(--green-1);
+    color: white;
 }
 
 .flex {display:flex;gap:12px;align-items:center}
-.two {display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.addons-list {display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
-.addons-list label {font-weight:500;color:#2f5b53}
-.result-card {display:flex;flex-direction:column;gap:12px;align-items:stretch;justify-content:center;height:100%}
+.two {display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:8px}
+
+/* Cleaner addon styling */
+.addons-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.addons-list label {
+    font-weight: 500;
+    color: #2f5b53;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 4px;
+    margin-top: 0;
+    margin-bottom: 0;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.15s ease;
+}
+
+.addons-list label:hover {
+    background-color: rgba(0, 164, 140, 0.05);
+}
+
+/* Calculator image styling */
+.result-card .img {
+    align-self: center;
+    width: 240px;
+    height: auto;
+    margin-bottom: 16px;
+    margin-top: -8px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 124, 107, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+    padding: 12px;
+}
+
+.result-card .img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 124, 107, 0.2);
+}
+
+/* Responsive image sizing */
+@media (max-width: 768px) {
+    .result-card .img {
+        width: 150px;
+        margin-bottom: 12px;
+        margin-top: -6px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .result-card .img {
+        width: 120px;
+        margin-bottom: 10px;
+        margin-top: -4px;
+        padding: 6px;
+    }
+}
+
+.result-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+    justify-content: center;
+    height: 100%;
+}
 .big-price {font-size:34px;color:var(--green-1);font-weight:800;letter-spacing:0.6px}
 .muted {color:var(--muted);font-size:13px}
 .breakdown {background:linear-gradient(180deg,#f6fffb,#ecfff6);padding:12px;border-radius:10px;border:1px solid #d8f2e8}
+
 .btn {
     background:linear-gradient(90deg,var(--green-1),var(--green-2));
     color:#fff;
@@ -128,15 +264,85 @@ select,input[type="number"] {
     border:none;
     font-weight:700;
     cursor:pointer;
+    font-size: 14px;
+    transition: transform 0.15s ease;
 }
-.btn.secondary {background:#fff;border:1px solid #d6ebe3;color:var(--accent)}
-.footer-note {font-size:12px;color:var(--muted);margin-top:8px}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn.secondary {
+    background:#fff;
+    border:1px solid #d6ebe3; 
+    color:var(--accent);
+}
+
+.btn.secondary:hover { 
+    background-color: #f0fdf4;
+    transform: translateY(-1px);
+}
+
+.footer-note {font-size:12px;color:var(--muted);margin-top:8px;line-height:1.4}
 .small {font-size:13px;color:#274741}
 .row {display:flex;gap:12px;align-items:center}
 .spaced {display:flex;justify-content:space-between;align-items:center}
 .badge {background:#e6fff6;color:#006a54;padding:6px 8px;border-radius:8px;font-weight:700}
-.checkbox-inline {display:flex;gap:8px;align-items:center}
-input[type="checkbox"] {width:16px;height:16px}
+
+.checkbox-inline {
+    display:flex;
+    gap:8px;
+    align-items:center;
+}
+
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--green-1);
+    cursor: pointer;
+}
+
 .summary-line {display:flex;justify-content:space-between;align-items:center;padding:4px 0}
 .notes {font-size:13px;color:#46625a}
 .footer-actions {display:flex;gap:12px;justify-content:flex-end;margin-top:8px}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .two {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .addons-list {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+    
+    select, input[type="number"] {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 11px 13px;
+        min-height: 44px;
+    }
+    
+    select {
+        padding-right: 40px;
+        background-position: right 14px center;
+    }
+}
+
+/* Special styling for service dropdown to make it stand out slightly */
+#service {
+    border-color: rgba(0, 124, 107, 0.3);
+    font-weight: 500;
+}
+
+#service:focus {
+    border-color: var(--green-1);
+}
+
+/* Disabled state */
+select:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #f9f9f9;
+}

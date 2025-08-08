@@ -5,24 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>SUH TECH — Quotation Calculator</title>
 <link rel="stylesheet" href="style.css">
-<style>
-    .discount-banner {
-        background: #e6fff3;
-        border: 1px dashed #00a48c;
-        padding: 8px;
-        margin-top: 10px;
-        margin-bottom: 12px;
-        border-radius: 8px;
-        font-size: 13px;
-        font-weight: 600;
-        color: #006a54;
-    }
-    #discount-section {
-        display: none;
-        color: green;
-        font-weight: 700;
-    }
-</style>
+
 </head>
 <body>
     <header class="header">
@@ -40,7 +23,7 @@
         <section class="panel left">
             <div class="section-title"><h2>Project Configuration</h2></div>
 
-            <!-- Discount banner -->
+            
             <div class="discount-banner">
                 🎉 Special Discount: ₹50,000+ → 8% OFF | ₹1,00,000+ → 12% OFF | ₹2,00,000+ → 15% OFF
             </div>
@@ -98,6 +81,7 @@
 
         <aside class="panel right">
             <div class="result-card">
+                <img class="img" src="calculator PNG.png" alt="Calculator image" width="100px">
                 <div class="spaced">
                     <div>
                         <div class="small">Estimated Price</div>
@@ -119,7 +103,7 @@
                     <div class="summary-line"><div class="small">Add-ons</div><div id="addons-total">₹0</div></div>
                     <div class="summary-line"><div class="small">Complexity × Urgency</div><div id="mult-total">×1.00</div></div>
 
-                    <!-- Discount display section -->
+                    
                     <div id="discount-section" class="summary-line">
                         <div class="small">Discount Applied</div>
                         <div id="discount-amount">₹0</div>
