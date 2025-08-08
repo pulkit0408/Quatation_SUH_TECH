@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SUH TECH — Quotation Calculator</title>
+<link rel="stylesheet" href="style.css">
+<style>
+    .discount-banner {
+        background: #e6fff3;
+        border: 1px dashed #00a48c;
+        padding: 8px;
+        margin-top: 10px;
+        margin-bottom: 12px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #006a54;
+    }
+    #discount-section {
+        display: none;
+        color: green;
+        font-weight: 700;
+    }
+</style>
+</head>
+<body>
+    <header class="header">
+        <div class="brand">
+            <img src="logo_Suh.jpg" alt="SUH TECH Logo" />
+            <div>
+                <h1>SUH TECH PRIVATE LIMITED</h1>
+                <p style="opacity:0.9;margin-top:6px;font-size:13px">We value your time</p>
+            </div>
+        </div>
+        <div style="margin-left:auto;color:rgba(255,255,255,0.95);font-weight:600">Quotation Calculator</div>
+    </header>
+
+    <main class="container" role="main">
+        <section class="panel left">
+            <div class="section-title"><h2>Project Configuration</h2></div>
+
+            <!-- Discount banner -->
+            <div class="discount-banner">
+                🎉 Special Discount: ₹50,000+ → 8% OFF | ₹1,00,000+ → 12% OFF | ₹2,00,000+ → 15% OFF
+            </div>
+
+            <label for="service">Service</label>
+            <select id="service" onchange="onServiceChange()"></select>
+
+            <label for="variation">Package / Variation</label>
+            <select id="variation" onchange="recalculate()"></select>
+
+            <div class="two">
+                <div>
+                    <label for="units">Pages / Modules / Units</label>
+                    <input id="units" type="number" min="0" value="1" oninput="recalculate()" />
+                </div>
+                <div>
+                    <label for="complexity">Complexity</label>
+                    <select id="complexity" onchange="recalculate()">
+                        <option value="1">Basic</option>
+                        <option value="1.25">Standard (+25%)</option>
+                        <option value="1.5">Complex (+50%)</option>
+                        <option value="2">Enterprise (+100%)</option>
+                    </select>
+                </div>
+            </div>
+
+            <label for="urgency">Delivery Urgency</label>
+            <select id="urgency" onchange="recalculate()">
+                <option value="1">Normal (Standard Delivery)</option>
+                <option value="1.15">Fast (+15%)</option>
+                <option value="1.35">Express (+35%)</option>
+            </select>
+
+            <label style="margin-top:12px">Add-ons</label>
+            <div id="addons" class="addons-list"></div>
+
+            <label style="margin-top:12px">Ludo Options (only show for Ludo service)</label>
+            <select id="ludoVariant" onchange="recalculate()" style="display:none">
+                <option value="0">— select —</option>
+            </select>
+
+            <label style="margin-top:12px">Currency</label>
+            <select id="currency" onchange="recalculate()">
+                <option value="INR">₹ INR</option>
+                <option value="USD">$ USD</option>
+            </select>
+
+            <div style="margin-top:14px" class="row">
+                <button class="btn" onclick="copyShareLink()">Copy Shareable Link</button>
+                <button class="btn secondary" onclick="resetAll()">Reset</button>
+            </div>
+
+            <div class="footer-note">Tip: change units to 1 for package-based pricing (ERP/Game) and >1 for per-page/module pricing (web pages).</div>
+        </section>
+
+        <aside class="panel right">
+            <div class="result-card">
+                <div class="spaced">
+                    <div>
+                        <div class="small">Estimated Price</div>
+                        <div id="price" class="big-price">₹0</div>
+                        <div class="muted" id="price-note">Auto-updates as you change options</div>
+                    </div>
+                    <div style="text-align:right">
+                        <div class="badge" id="service-badge">Website</div>
+                        <div style="height:8px"></div>
+                        <div class="muted">Prepared for client</div>
+                    </div>
+                </div>
+
+                <div class="breakdown" style="margin-top:12px">
+                    <div style="font-weight:700;margin-bottom:8px">Breakdown</div>
+                    <div id="break-list"></div>
+                    <hr style="border:none;border-top:1px solid #e6f8f1;margin:12px 0" />
+                    <div class="summary-line"><div class="small">Subtotal</div><div id="sub-total">₹0</div></div>
+                    <div class="summary-line"><div class="small">Add-ons</div><div id="addons-total">₹0</div></div>
+                    <div class="summary-line"><div class="small">Complexity × Urgency</div><div id="mult-total">×1.00</div></div>
+
+                    <!-- Discount display section -->
+                    <div id="discount-section" class="summary-line">
+                        <div class="small">Discount Applied</div>
+                        <div id="discount-amount">₹0</div>
+                    </div>
+
+                    <div style="height:12px"></div>
+                    <div class="summary-line" style="font-size:18px;font-weight:800"><div>Total</div><div id="grand-total">₹0</div></div>
+                </div>
+
+                <div style="display:flex;gap:10px;margin-top:12px">
+                    <button class="btn" onclick="downloadPDF()">Print / Save PDF</button>
+                    <button class="btn secondary" onclick="saveQuote()">Save Quote</button>
+                </div>
+                <div class="notes" id="saved-note" style="display:none;margin-top:10px">Quote saved to localStorage.</div>
+            </div>
+        </aside>
+    </main>
+
+<script src="script.js"></script>
+</body>
+</html>
