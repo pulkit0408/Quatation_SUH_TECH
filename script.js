@@ -1,21 +1,22 @@
+// PRICES REDUCED BY 45% FROM ORIGINAL VALUES
 const DATA = {
   "Website Design": {
     type: "per_unit",
     variations: [
-      { id: "web_basic", name: "Basic Static Website", price: 15000 },
-      { id: "web_cms", name: "Dynamic CMS Website", price: 25000 },
-      { id: "web_ecom", name: "E-commerce Website", price: 40000 },
-      { id: "web_custom", name: "Custom Web Application", price: 60000 },
+      { id: "web_basic", name: "Basic Static Website", price: 8250 }, // was 15000
+      { id: "web_cms", name: "Dynamic CMS Website", price: 13750 }, // was 25000
+      { id: "web_ecom", name: "E-commerce Website", price: 22000 }, // was 40000
+      { id: "web_custom", name: "Custom Web Application", price: 33000 }, // was 60000
     ],
     addons: [
-      { id: "seo", name: "SEO Setup", price: 5000 },
-      { id: "responsive", name: "Mobile Responsiveness", price: 3000 },
-      { id: "payment", name: "Payment Gateway Integration", price: 8000 },
-      { id: "multilang", name: "Additional Language Support", price: 7000 },
+      { id: "seo", name: "SEO Setup", price: 2750 }, // was 5000
+      { id: "responsive", name: "Mobile Responsiveness", price: 1650 }, // was 3000
+      { id: "payment", name: "Payment Gateway Integration", price: 4400 }, // was 8000
+      { id: "multilang", name: "Additional Language Support", price: 3850 }, // was 7000
       {
         id: "maintenance",
         name: "Monthly Maintenance (first month)",
-        price: 2500,
+        price: 1375, // was 2500
       },
     ],
     note: "Per page pricing: change Units for number of pages.",
@@ -23,55 +24,55 @@ const DATA = {
   "ERP Software": {
     type: "package",
     variations: [
-      { id: "erp_basic", name: "Basic ERP (Single Module)", price: 80000 },
-      { id: "erp_standard", name: "Standard ERP (3–5 Modules)", price: 150000 },
+      { id: "erp_basic", name: "Basic ERP (Single Module)", price: 44000 }, // was 80000
+      { id: "erp_standard", name: "Standard ERP (3–5 Modules)", price: 82500 }, // was 150000
       {
         id: "erp_advanced",
         name: "Advanced ERP (Custom Modules)",
-        price: 250000,
+        price: 137500, // was 250000
       },
     ],
     addons: [
-      { id: "cloud", name: "Cloud Hosting Setup", price: 15000 },
-      { id: "api", name: "API Integration (per API)", price: 10000 },
-      { id: "multiuser", name: "Multi-User License", price: 20000 },
-      { id: "migration", name: "Data Migration", price: 25000 },
-      { id: "training", name: "Training Session", price: 5000 },
+      { id: "cloud", name: "Cloud Hosting Setup", price: 8250 }, // was 15000
+      { id: "api", name: "API Integration (per API)", price: 5500 }, // was 10000
+      { id: "multiuser", name: "Multi-User License", price: 11000 }, // was 20000
+      { id: "migration", name: "Data Migration", price: 13750 }, // was 25000
+      { id: "training", name: "Training Session", price: 2750 }, // was 5000
     ],
     note: "Package pricing: set Units to 1 unless requesting multiple deployments.",
   },
   "Slot / Casino Game": {
     type: "package",
     variations: [
-      { id: "slot_single", name: "Single Game (Basic)", price: 45000 },
-      { id: "slot_pack", name: "3-in-1 Game Pack", price: 120000 },
-      { id: "slot_suite", name: "Full Casino Suite", price: 300000 },
+      { id: "slot_single", name: "Single Game (Basic)", price: 24750 }, // was 45000
+      { id: "slot_pack", name: "3-in-1 Game Pack", price: 66000 }, // was 120000
+      { id: "slot_suite", name: "Full Casino Suite", price: 165000 }, // was 300000
     ],
     addons: [
-      { id: "art", name: "Custom Artwork & Animation", price: 20000 },
-      { id: "multiplayer", name: "Multiplayer Mode", price: 35000 },
-      { id: "leader", name: "Leaderboards & Tournaments", price: 25000 },
-      { id: "wallet", name: "Payment / Wallet Integration", price: 15000 },
-      { id: "marketing", name: "Marketing Website for Game", price: 30000 },
+      { id: "art", name: "Custom Artwork & Animation", price: 11000 }, // was 20000
+      { id: "multiplayer", name: "Multiplayer Mode", price: 19250 }, // was 35000
+      { id: "leader", name: "Leaderboards & Tournaments", price: 13750 }, // was 25000
+      { id: "wallet", name: "Payment / Wallet Integration", price: 8250 }, // was 15000
+      { id: "marketing", name: "Marketing Website for Game", price: 16500 }, // was 30000
     ],
     note: "Package pricing: set Units to 1.",
   },
   "Ludo Game": {
     type: "package",
     variations: [
-      { id: "ludo_2p", name: "2 Players Ludo Game", price: 35000 },
-      { id: "ludo_3p", name: "3 Players Ludo Game", price: 45000 },
-      { id: "ludo_4p", name: "4 Players Ludo Game", price: 55000 },
-      { id: "ludo_pvc", name: "Player vs Computer", price: 60000 },
+      { id: "ludo_2p", name: "2 Players Ludo Game", price: 19250 }, // was 35000
+      { id: "ludo_3p", name: "3 Players Ludo Game", price: 24750 }, // was 45000
+      { id: "ludo_4p", name: "4 Players Ludo Game", price: 30250 }, // was 55000
+      { id: "ludo_pvc", name: "Player vs Computer", price: 33000 }, // was 60000
     ],
     addons: [
-      { id: "board", name: "Custom Board & Tokens Design", price: 8000 },
-      { id: "online", name: "Online Multiplayer", price: 20000 },
-      { id: "chat", name: "Chat & Emoji Reactions", price: 6000 },
-      { id: "coin", name: "Coin/Point System", price: 12000 },
-      { id: "l_leader", name: "Leaderboard & Rewards", price: 10000 },
-      { id: "l_payment", name: "Payment Gateway Integration", price: 15000 },
-      { id: "builds", name: "Android + iOS Build", price: 18000 },
+      { id: "board", name: "Custom Board & Tokens Design", price: 4400 }, // was 8000
+      { id: "online", name: "Online Multiplayer", price: 11000 }, // was 20000
+      { id: "chat", name: "Chat & Emoji Reactions", price: 3300 }, // was 6000
+      { id: "coin", name: "Coin/Point System", price: 6600 }, // was 12000
+      { id: "l_leader", name: "Leaderboard & Rewards", price: 5500 }, // was 10000
+      { id: "l_payment", name: "Payment Gateway Integration", price: 8250 }, // was 15000
+      { id: "builds", name: "Android + iOS Build", price: 9900 }, // was 18000
     ],
     note: "Ludo packages: choose variant and add optional features.",
   },
@@ -94,8 +95,9 @@ const grandTotalEl = document.getElementById("grand-total");
 const serviceBadge = document.getElementById("service-badge");
 const ludoVariant = document.getElementById("ludoVariant");
 const savedNote = document.getElementById("saved-note");
-const discountSection = document.getElementById("discount-section");
-const discountAmount = document.getElementById("discount-amount");
+// REMOVED DISCOUNT REFERENCES
+// const discountSection = document.getElementById("discount-section");
+// const discountAmount = document.getElementById("discount-amount");
 
 /* Currency conversion utilities */
 function convertCurrency(inrAmount, targetCurrency) {
@@ -121,17 +123,17 @@ function formatCurrencyAmount(amount, currency) {
   }
 }
 
-/* Calculate discount based on amount (in INR) */
-function calculateDiscount(amount) {
-  if (amount >= 200000) {
-    return { rate: 0.15, amount: Math.round(amount * 0.15) };
-  } else if (amount >= 100000) {
-    return { rate: 0.12, amount: Math.round(amount * 0.12) };
-  } else if (amount >= 50000) {
-    return { rate: 0.08, amount: Math.round(amount * 0.08) };
-  }
-  return { rate: 0, amount: 0 };
-}
+/* REMOVED DISCOUNT CALCULATION FUNCTION */
+// function calculateDiscount(amount) {
+//   if (amount >= 200000) {
+//     return { rate: 0.15, amount: Math.round(amount * 0.15) };
+//   } else if (amount >= 100000) {
+//     return { rate: 0.12, amount: Math.round(amount * 0.12) };
+//   } else if (amount >= 50000) {
+//     return { rate: 0.08, amount: Math.round(amount * 0.08) };
+//   }
+//   return { rate: 0, amount: 0 };
+// }
 
 /* Populate service dropdown - keep it clean and simple */
 function populateServices() {
@@ -250,24 +252,21 @@ function recalculate() {
     }
   });
 
-  // total with multipliers (before discount, in INR)
+  // total with multipliers (no discount calculation)
   const multiplier = complexity * urgency;
-  const totalBeforeDiscount = Math.round((subtotal + addonsTotal) * multiplier);
+  const finalTotal = Math.round((subtotal + addonsTotal) * multiplier);
 
-  // calculate discount (based on INR amount)
-  const discount = calculateDiscount(totalBeforeDiscount);
-  const finalTotal = totalBeforeDiscount - discount.amount;
+  // REMOVED DISCOUNT CALCULATION AND DISPLAY
+  // const discount = calculateDiscount(totalBeforeDiscount);
+  // const finalTotal = totalBeforeDiscount - discount.amount;
 
-  // show/hide discount section
-  if (discount.amount > 0) {
-    discountSection.style.display = "flex";
-    discountAmount.textContent = `-${formatCurrencyAmount(
-      discount.amount,
-      currency
-    )}`;
-  } else {
-    discountSection.style.display = "none";
-  }
+  // REMOVED DISCOUNT SECTION SHOW/HIDE
+  // if (discount.amount > 0) {
+  //   discountSection.style.display = "flex";
+  //   discountAmount.textContent = `-${formatCurrencyAmount(discount.amount, currency)}`;
+  // } else {
+  //   discountSection.style.display = "none";
+  // }
 
   // update UI with currency conversion
   priceEl.textContent = formatCurrencyAmount(finalTotal, currency);
@@ -309,45 +308,11 @@ function recalculate() {
     breakList.appendChild(r);
   }
 
+  // REMOVED DISCOUNT RELATED SUMMARY SECTION UPDATES
   // Update the summary section to show total before discount if there's a discount
-  const summarySection = grandTotalEl.closest(".breakdown");
-  const discountLine = summarySection.querySelector("#discount-section");
-
-  // Remove any existing "Total Before Discount" lines to prevent duplicates
-  const existingBeforeDiscountLines = summarySection.querySelectorAll(
-    ".before-discount-line"
-  );
-  existingBeforeDiscountLines.forEach((line) => line.remove());
-
-  // Remove any existing separators
-  const existingSeparators = summarySection.querySelectorAll(
-    ".discount-separator"
-  );
-  existingSeparators.forEach((sep) => sep.remove());
-
-  if (
-    discount.amount > 0 &&
-    discountLine &&
-    discountLine.style.display !== "none"
-  ) {
-    // Add some visual separation
-    const separator = document.createElement("div");
-    separator.className = "discount-separator";
-    separator.style.height = "8px";
-
-    // Update the summary section to show the flow better
-    const beforeDiscountLine = document.createElement("div");
-    beforeDiscountLine.className = "summary-line before-discount-line";
-    beforeDiscountLine.style.fontWeight = "600";
-    beforeDiscountLine.innerHTML = `<div class="small">Total Before Discount</div><div class="small">${formatCurrencyAmount(
-      totalBeforeDiscount,
-      currency
-    )}</div>`;
-
-    // Insert this line before the discount section in the summary
-    discountLine.parentNode.insertBefore(separator, discountLine);
-    discountLine.parentNode.insertBefore(beforeDiscountLine, discountLine);
-  }
+  // const summarySection = grandTotalEl.closest(".breakdown");
+  // const discountLine = summarySection.querySelector("#discount-section");
+  // ... (removed all discount related code)
 }
 
 /* Utilities */

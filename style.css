@@ -81,7 +81,8 @@ html,body {
     border: 1px solid rgba(0,0,0,0.03);
 }
 
-.discount-banner {
+/* REMOVED DISCOUNT BANNER STYLES */
+/* .discount-banner {
     background: #e6fff3;
     border: 1px dashed #00a48c;
     padding: 8px;
@@ -91,13 +92,14 @@ html,body {
     font-size: 13px;
     font-weight: 600;
     color: #006a54;
-}
+} */
 
-#discount-section {
+/* REMOVED DISCOUNT SECTION STYLES */
+/* #discount-section {
     display: none;
     color: green;
     font-weight: 700;
-}
+} */
 
 .section-title {
     display:flex;
